@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout - Tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cream': '#F3E1D1',
+                        'gold': '#F7D169',
+                        'dark-brown': '#120A05',
+                        'light-cream': '#F9F6F2'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="m-0 font-['Montserrat'] text-gray-800 bg-dark-brown leading-relaxed overflow-x-hidden">
+    <div class="relative z-10 max-w-screen overflow-x-hidden">
+        <!-- Grid Columns -->
+        <div class="grid grid-cols-4 h-full absolute inset-0 z-0 pointer-events-none">
+            <div class="border-r border-light-cream opacity-5 h-full"></div>
+            <div class="border-r border-light-cream opacity-5 h-full"></div>
+            <div class="border-r border-light-cream opacity-5 h-full"></div>
+            <div class="h-full"></div>
+        </div>
+        
+        <!-- Vertical Borders -->
+        <div class="fixed top-0 left-[75px] bottom-0 w-0.5 bg-cream rounded-sm opacity-30 z-[9999] pointer-events-none"></div>
+        <div class="fixed top-0 right-[75px] bottom-0 w-0.5 bg-cream rounded-sm opacity-30 z-[9999] pointer-events-none"></div>
+        
+        <!-- Horizontal Borders -->
+        <div class="absolute left-0 right-0 top-[100px] h-0.5 bg-cream rounded-sm opacity-30 z-[9999] pointer-events-none"></div>
+        <div class="absolute left-0 right-0 bottom-[300px] h-0.5 bg-cream rounded-sm opacity-30 z-[9999] pointer-events-none"></div>
+        
+        <!-- Header with Phone Number -->
+        <header class="relative z-20 p-6 text-white">
+            <div class="flex justify-between items-center max-w-6xl mx-auto">
+                <h1 class="font-['Playfair_Display'] text-2xl font-bold">Ambra Restaurant</h1>
+                <a href="tel:+359888123456" class="text-white hover:text-gold transition-colors duration-200 font-semibold">
+                    +359 888 123 456
+                </a>
+            </div>
+        </header>
+        
+        <!-- Content -->
+        <div class="relative z-20 p-8 text-cream text-center min-h-screen flex flex-col justify-center items-center">
+            <h1 class="font-['Playfair_Display'] text-4xl mb-4 text-gold">Your Content Here</h1>
+            <p class="text-lg max-w-2xl mx-auto">This is where your main content would go. The grid structure flows behind everything using Tailwind CSS classes.</p>
+        </div>
+    </div>
+</body>
+</html> 
