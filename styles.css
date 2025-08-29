@@ -178,6 +178,19 @@ blockquote {
   color: var(--highlight);
 }
 
+.phone-number {
+  background: #C05A13;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 700;
+  transition: background 0.2s, color 0.2s;
+}
+
+.phone-number:hover {
+  background: var(--highlight);
+  color: var(--header-footer);
+}
+
 .hero {
   background: url('room.jpg') center/cover no-repeat;
   color: #F3E1D1;
