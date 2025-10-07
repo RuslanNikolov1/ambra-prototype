@@ -28,7 +28,12 @@
                 <div class="logo">
                     <a href="index.html"><img src="logo.png" alt="Ambra Logo" class="logo-img"></a>
                 </div>
-                <ul class="nav-links">
+                <button class="hamburger" aria-label="Open menu" aria-controls="primary-navigation" aria-expanded="false">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+                <ul id="primary-navigation" class="nav-links">
                     <li><a href="full-menu.html">Menu</a></li>
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -154,7 +159,6 @@
         <section class="reviews-section alt-bg">
             <h2>Customer Reviews</h2>
             <div class="reviews-container">
-                <img src="logo.png" alt="Ambra Logo" class="reviews-logo">
 
 
                 <div class="reviews-grid">
@@ -183,7 +187,6 @@
                         <footer>— Lucas W.</footer>
                     </blockquote>
                 </div>
-                <img src="logo.png" alt="Ambra Logo" class="reviews-logo">
             </div>
 
         </section>
@@ -220,6 +223,28 @@
             <div class="footer-bottom">&copy; 2024 Ambra. All rights reserved.</div>
         </footer>
     </div>
+    <script>
+      (function(){
+        var button = document.querySelector('.hamburger');
+        var nav = document.getElementById('primary-navigation');
+        if(!button || !nav) return;
+        button.addEventListener('click', function(){
+          var isOpen = button.getAttribute('aria-expanded') === 'true';
+          button.setAttribute('aria-expanded', String(!isOpen));
+          nav.classList.toggle('is-open');
+          document.body.classList.toggle('nav-open');
+        });
+        // Close on link click (mobile)
+        nav.addEventListener('click', function(e){
+          var target = e.target;
+          if(target && target.tagName === 'A'){
+            button.setAttribute('aria-expanded', 'false');
+            nav.classList.remove('is-open');
+            document.body.classList.remove('nav-open');
+          }
+        });
+      })();
+    </script>
 </body>
 
 </html>
