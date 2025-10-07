@@ -34,6 +34,9 @@
                     </span>
                 </button>
                 <ul id="primary-navigation" class="nav-links">
+                    <li class="nav-close-item">
+                        <button class="nav-close" aria-label="Close menu"><span aria-hidden="true">&times;</span></button>
+                    </li>
                     <li><a href="full-menu.html">Menu</a></li>
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -223,16 +226,20 @@
             <div class="footer-bottom">&copy; 2024 Ambra. All rights reserved.</div>
         </footer>
     </div>
+    <div class="nav-overlay" aria-hidden="true" tabindex="-1"></div>
     <script>
       (function(){
         var button = document.querySelector('.hamburger');
         var nav = document.getElementById('primary-navigation');
+        var overlay = document.querySelector('.nav-overlay');
+        var closeBtn = document.querySelector('.nav-close');
         if(!button || !nav) return;
         button.addEventListener('click', function(){
           var isOpen = button.getAttribute('aria-expanded') === 'true';
           button.setAttribute('aria-expanded', String(!isOpen));
           nav.classList.toggle('is-open');
           document.body.classList.toggle('nav-open');
+          if(overlay){ overlay.style.display = document.body.classList.contains('nav-open') ? 'block' : 'none'; }
         });
         // Close on link click (mobile)
         nav.addEventListener('click', function(e){
@@ -241,10 +248,30 @@
             button.setAttribute('aria-expanded', 'false');
             nav.classList.remove('is-open');
             document.body.classList.remove('nav-open');
+            if(overlay){ overlay.style.display = 'none'; }
           }
         });
+        // Close on overlay click
+        if(overlay){
+          overlay.addEventListener('click', function(){
+            button.setAttribute('aria-expanded', 'false');
+            nav.classList.remove('is-open');
+            document.body.classList.remove('nav-open');
+            overlay.style.display = 'none';
+          });
+        }
+        // Close on X button
+        if(closeBtn){
+          closeBtn.addEventListener('click', function(){
+            button.setAttribute('aria-expanded', 'false');
+            nav.classList.remove('is-open');
+            document.body.classList.remove('nav-open');
+            if(overlay){ overlay.style.display = 'none'; }
+          });
+        }
       })();
     </script>
 </body>
 
+</html>
 </html>
