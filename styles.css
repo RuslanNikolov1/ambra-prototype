@@ -410,6 +410,7 @@ blockquote {
   align-items: center;
   justify-content: space-evenly;
   overflow: hidden;
+  margin: 0 auto;
 }
 .menu-side-image-left {
   margin-right: 1.5rem;
