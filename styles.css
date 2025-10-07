@@ -159,13 +159,13 @@ blockquote {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 2rem;
+  justify-content: center;
+  gap: 3rem;
   margin: 0;
   padding: 0;
   height: 100%;
   align-self: center;
-  padding-right: 2rem;
-  margin-right: 4rem;
+  flex: 1 1 auto;
 }
 .nav-links a {
   color: #F3E1D1;
