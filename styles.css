@@ -952,6 +952,18 @@ section:not(:first-of-type):before {
       "wide small2"
       "small3 small4";
   }
+  .site-header { margin-top: 12px; }
+  .logo { margin-left: 0; padding-left: 1rem; font-size: 1.6rem; }
+  .nav-links { gap: 1rem; padding-right: 1rem; margin-right: 0; flex-wrap: wrap; }
+  .hero { padding: 5rem 1rem 4rem 1rem; border-width: 6px; min-height: 60vh; }
+  .menu-list-columns { flex-direction: column; gap: 2rem; align-items: center; }
+  .menu-list { max-width: 640px; padding: 0 1rem; }
+  .menu-list:not(:last-child)::after { display: none; }
+  .main-container::before,
+  .main-container::after,
+  .main-container-top-border,
+  .main-container-bottom-border { display: none; }
+  .gallery-grid-custom { padding-left: 1rem; padding-right: 1rem; border-left: none; border-right: none; }
 }
 @media (max-width: 700px) {
   .reviews-grid {
@@ -965,9 +977,11 @@ section:not(:first-of-type):before {
   }
 }
 @media (max-width: 600px) {
+  .nav-links a { font-size: 0.95rem; }
   .hero h1 {
     font-size: 2rem;
   }
+  .hero { padding: 4rem 0.75rem 3rem 0.75rem; border-width: 4px; min-height: 52vh; }
   .intro-text h2 {
     font-size: 2rem;
   }
@@ -1001,6 +1015,7 @@ section:not(:first-of-type):before {
     max-width: 98vw;
     padding: 1.2rem 0.7rem 1rem 0.7rem;
   }
+  .btn-reserve { width: 72px; height: 72px; bottom: 16px; left: 16px; font-size: 0.9rem; }
 }
 @media (max-width: 1100px) {
   .menu-flex {
