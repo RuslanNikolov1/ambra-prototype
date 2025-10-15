@@ -432,6 +432,9 @@ blockquote {
   flex-direction: row;
   align-items: stretch;
   justify-content: center;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
 }
 .menu-side-image {
   display: flex;
@@ -442,6 +445,8 @@ blockquote {
   margin: 0 auto;
   gap: 3.5rem;
   width: 200px;
+  flex-shrink: 0;
+  position: relative;
 }
 .menu-side-image img {
   width: 100%;
