@@ -434,19 +434,18 @@ blockquote {
   justify-content: center;
 }
 .menu-side-image {
-  flex: 0 0 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   overflow: hidden;
   margin: 0 auto;
-  gap: 0.1rem;
+  gap: 0.75rem;
 }
 .menu-side-image img {
   width: 100%;
   height: auto;
-  max-width: 350px;
+  max-width: 300px;
   object-fit: cover;
   display: block;
   margin: 0 auto;
